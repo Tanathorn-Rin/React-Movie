@@ -1,12 +1,12 @@
 import './App.css'
-import MovieCard from './component/movie';
+import Home from './pages/Home';
 
 function App() {
-  return (
-    <>
-      <MovieCard movie={{ title: "Inception", releaseDate: "2010", url: "https://example.com/inception.jpg" }} />
-    </>
-  );
+    return (
+        <div className="App">
+            <Home />
+        </div>
+    );
 }
 
-export default App
+export default App;

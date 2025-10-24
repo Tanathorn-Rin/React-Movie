@@ -1,4 +1,4 @@
-import MovieCard from "../component/movie";
+import MovieCard from "../component/MovieCard";
 import React from "react";
 
 function Home() {

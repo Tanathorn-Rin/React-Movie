@@ -29,3 +29,19 @@ export const searchMovies = async (query) => {
         type: m.Type,
     }));
 }
+
+export const getMovieById = async (imdbId) => {
+    if (!imdbId) return null;
+    const response = await fetch(`${BASE_URL}?apikey=${API_KEY}&i=${encodeURIComponent(imdbId)}`);
+    const data = await response.json();
+    if (!data || data.Response === "False") return null;
+    return {
+        id: data.imdbID,
+        title: data.Title,
+        poster: data.Poster,
+        year: data.Year,
+        type: data.Type,
+        plot: data.Plot,
+        raw: data,
+    };
+}

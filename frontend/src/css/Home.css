@@ -55,9 +55,16 @@
 
 .movies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Use fixed column width so posters don't expand on very wide screens. */
+  grid-template-columns: repeat(auto-fit, 220px);
+  justify-content: center; /* center the grid when there is extra space */
   gap: 1.5rem;
   padding: 1rem;
   width: 100%;
   box-sizing: border-box;
+}
+
+/* Keep legacy class name as an alias so either `movie-grid` or `movies-grid` works */
+.movie-grid {
+  display: contents;
 }

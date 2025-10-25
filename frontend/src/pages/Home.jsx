@@ -27,10 +27,24 @@ function Home() {
         loadPopularMovies();
     }, []);
 
-    const handleSearchSubmit = (event) => {
+    const handleSearchSubmit = async (event) => {
         event.preventDefault();
-        alert("Searching for " + searchQuery);
-        setSearchQuery("");
+        if (!searchQuery.trim()) {
+            return;
+        }
+        if (loading) return;
+
+        setLoading(true);
+        try {
+                const results = await searchMovies(searchQuery);
+                setMovies(results);
+                setError(null);
+        } catch (error) {
+            console.log(error);
+            setError("Error searching movies.");
+        } finally {
+            setLoading(false);
+        }
     }
 
     return (
@@ -47,10 +61,20 @@ function Home() {
 
             {error && <div className="error-message">{error}</div>}
 
-            {loading ? <div>Loading...</div> : <div className="movie-grid">
-                {movies.map(movie => 
-                    movie.title.toLocaleLowerCase().startsWith(searchQuery) && (<MovieCard movie={movie} key={movie.id}/>))}
-            </div>}
+            {loading ? (
+                <div>Loading...</div>
+            ) : (
+                <div className="movies-grid">
+                    {movies
+                        .filter((movie) => {
+                            if (!searchQuery.trim()) return true;
+                            return movie.title.toLowerCase().startsWith(searchQuery.toLowerCase());
+                        })
+                        .map((movie) => (
+                            <MovieCard movie={movie} key={movie.id} />
+                        ))}
+                </div>
+            )}
         </div>
     );
 }

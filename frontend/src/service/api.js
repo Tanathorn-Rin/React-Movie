@@ -6,11 +6,26 @@ export const getPopularMovies = async (searchQuery) => {
     // If you're using OMDB, use `s` or `i` query parameters. Example search by title:
     const response = await fetch(`${BASE_URL}?apikey=${API_KEY}&s=${encodeURIComponent(searchQuery || "batman")}`);
     const data = await response.json();
-    return data.Search || [];
+    const results = data.Search || [];
+    // Normalize OMDB result shape to { id, title, poster, year, type }
+    return results.map(m => ({
+        id: m.imdbID,
+        title: m.Title,
+        poster: m.Poster,
+        year: m.Year,
+        type: m.Type,
+    }));
 };
 
 export const searchMovies = async (query) => {
     const response = await fetch(`${BASE_URL}?apikey=${API_KEY}&s=${encodeURIComponent(query)}`);
     const data = await response.json();
-    return data.Search || [];
+    const results = data.Search || [];
+    return results.map(m => ({
+        id: m.imdbID,
+        title: m.Title,
+        poster: m.Poster,
+        year: m.Year,
+        type: m.Type,
+    }));
 }

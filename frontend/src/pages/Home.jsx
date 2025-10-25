@@ -44,10 +44,13 @@ function Home() {
                 />
                 <button type="submit" className="search-button">Search</button>
             </form>
-            <div className="movie-grid">
+
+            {error && <div className="error-message">{error}</div>}
+
+            {loading ? <div>Loading...</div> : <div className="movie-grid">
                 {movies.map(movie => 
                     movie.title.toLocaleLowerCase().startsWith(searchQuery) && (<MovieCard movie={movie} key={movie.id}/>))}
-            </div>
+            </div>}
         </div>
     );
 }

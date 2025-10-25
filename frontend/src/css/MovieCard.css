@@ -73,6 +73,36 @@
   color: #ff4757;
 }
 
+/* Alias for markup using `favorite-button` class in MovieCard.jsx */
+.movie-poster .favorite-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: white;
+  font-size: 1.25rem;
+  padding: 0.35rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s, transform 0.12s;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.movie-poster .favorite-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-1px);
+}
+
+.movie-poster .favorite-button.active {
+  color: #ff4757;
+}
+
 .rating-select {
   background-color: rgba(0, 0, 0, 0.7);
   color: white;

@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎬 React Movie Tutorial
+# 🎬 React Movie
 
 ### Learn React by Building a Modern Movie Application
 
@@ -8,7 +8,7 @@
 [![Vite](https://img.shields.io/badge/Vite-7.1.7-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-[Demo](#) · [Report Bug](https://github.com/Tanathorn-Rin/React-Movie-Tutorial/issues) · [Request Feature](https://github.com/Tanathorn-Rin/React-Movie-Tutorial/issues)
+[Demo](#) · [Report Bug](https://github.com/Tanathorn-Rin/React-Movie/issues) · [Request Feature](https://github.com/Tanathorn-Rin/React-Movie/issues)
 
 </div>
 
@@ -16,9 +16,9 @@
 
 ## 📖 About The Project
 
-**React Movie Tutorial** is a comprehensive, hands-on learning project designed to help developers master React by building a fully functional movie browsing application. This tutorial covers essential React concepts including components, hooks, routing, and modern development practices.
+**React Movie** is a comprehensive, hands-on learning project designed to help developers master React by building a fully functional movie browsing application. This covers essential React concepts, including components, hooks, routing, and modern development practices.
 
-### ✨ What You'll Learn
+### ✨ What I have Learned
 
 - 🔧 **React Fundamentals** - Components, Props, and State Management
 - 🎣 **React Hooks** - useState, useEffect, and custom hooks
@@ -50,12 +50,12 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Tanathorn-Rin/React-Movie-Tutorial.git
+   git clone https://github.com/Tanathorn-Rin/React-Movie.git
    ```
 
 2. **Navigate to the project directory**
    ```bash
-   cd React-Movie-Tutorial/frontend
+   cd React-Movie/frontend
    ```
 
 3. **Install dependencies**
@@ -89,7 +89,7 @@
 ## 📁 Project Structure
 
 ```
-React-Movie-Tutorial/
+React-Movie/
 └── frontend/
     ├── public/          # Static assets
     ├── src/             # Source files
